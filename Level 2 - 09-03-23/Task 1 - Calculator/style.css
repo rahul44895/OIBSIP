@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background: linear-gradient(#000, #0083ec) fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.bubbles-containers {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  transform: translateY(110vh);
+  animation: bubbles-anime 10s linear infinite;
+}
+.bubbles-containers:nth-child(2) {
+  animation-delay: 8s;
+}
+@keyframes bubbles-anime {
+  50% {
+  }
+  100% {
+    transform: translateY(-54vh) scale(1);
+  }
+}
+.bubbles {
+  height: 100px;
+  width: 100px;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  overflow: hidden;
+}
+.bubbles:nth-child(1) {
+  left: 180px;
+}
+.bubbles:nth-child(2) {
+  left: 370px;
+  top: 300px;
+}
+.bubbles:nth-child(3) {
+  right: 180px;
+}
+.bubbles:nth-child(4) {
+  right: 360px;
+  top: 465px;
+}
+.bubbles:nth-child(5) {
+  left: 330px;
+  top: 800px;
+}
+.bubbles:nth-child(6) {
+  right: 630px;
+  top: 840px;
+}
+.bubbles::before {
+  content: "";
+  height: 100px;
+  width: 40%;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: skew(45deg) translateX(150px);
+  animation: mirror 5s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes mirror {
+  100% {
+    transform: skew(45deg) translateX(-150px);
+  }
+}
+.calc-container {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1em;
+  border-radius: 10px;
+  box-shadow: 0 20px 50px rgb(0 0 0 / 15%);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  z-index: 10;
+}
+.row {
+  display: flex;
+  justify-content: space-evenly;
+}
+.row input {
+  width: 100%;
+  padding: 1em;
+  background: transparent;
+  border: none;
+  height: 40px;
+  cursor: none;
+  outline: none;
+  text-align: right;
+  color: white;
+  font-size: 20px;
+}
+.row .button {
+  padding: 1em;
+  color: white;
+  font-size: 20px;
+  height: 40px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3px;
+  border-radius: 10%;
+  transition: all 0.2s linear;
+  user-select: none;
+}
+.row .button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+}
+@media only screen and (max-width:700px) {
+  .bubbles-containers:nth-child(2) {
+    display: none;
+  }
+}
