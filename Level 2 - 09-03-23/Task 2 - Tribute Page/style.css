@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+}
+.nikola-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nikola-overlay img {
+  position: relative;
+  left: -20%;
+  animation: nikola-img 2s infinite linear;
+  transition: all 0.2s linear;
+}
+@keyframes nikola-img {
+  0% {
+    bottom: -20px;
+  }
+  50% {
+    bottom: -5px;
+  }
+  100% {
+    bottom: -20px;
+  }
+}
+.nikola-overlay:hover img {
+  position: relative;
+  left: 10%;
+}
+.nikola-overlay div {
+  position: relative;
+  color: white;
+  opacity: 0;
+  left: 30%;
+  transition: all 0.2s linear;
+  max-width: 700px;
+  line-height: 30px;
+}
+.nikola-overlay:hover div {
+  opacity: 1;
+  left: 0%;
+}
+.inventions-container {
+  padding: 2em;
+  background: url(./images/bg.jpg);
+  color: white;
+  width: 100vw;
+}
+.inventions-container h1 {
+  text-align: center;
+  text-shadow: 5px -3px 0 #372a22, 6px -4px 0 rgb(215 111 56 / 50%);
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 1em;
+}
+.card {
+  position: relative;
+  margin: 10px 0px;
+  border: 1px solid wheat;
+  padding: 2em;
+  /* background: url(http://tesla.aziznatour.com/ui/img/inventions/bg.jpg); */
+  border-radius: 10px;
+  animation: card-move 1s infinite linear;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 2s;
+}
+.card-vis {
+  opacity: 1;
+  transform: translateY(0px);
+}
+.card:hover {
+  background: #0000001f;
+  animation: card-move 1s linear;
+}
+@keyframes card-move {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: -5px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+.sub_card {
+  display: flex;
+  width: 30em;
+}
+.sub_card img {
+  width: 5em;
+  height: 5em;
+}
+.sub_card div {
+  margin-right: 10px;
+}
+.footer {
+  text-align: center;
+  padding: 1em;
+  background:#63221b;
+  color:white;
+}
+@media only screen and (max-width: 800px) {
+  .nikola-overlay:hover div {
+    opacity: 1;
+    left: 10%;
+  }
+}
